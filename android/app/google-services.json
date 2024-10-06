@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755288942596",
+    "project_id": "phone-zone-614f2",
+    "storage_bucket": "phone-zone-614f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755288942596:android:dcd296e13693f289ddad51",
+        "android_client_info": {
+          "package_name": "com.example.phone_zone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEwaD6HbgVE5wdFfdAxc54agtIAKA4G8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string name="app_name">phone_zone</string>
+<string name="facebook_app_id">1088932386241409</string>
+<string name="fb_login_protocol_scheme">fb1234</string>
+<string name="facebook_client_token">8c9aa7af22aef756edd2c7c029d7aea7</string>
+
+</resources>
