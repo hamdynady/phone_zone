@@ -24,8 +24,8 @@ class CustomHomeAppBar extends StatelessWidget {
         onPressed: () {},
         icon: Stack(
           children: [
-            SvgPicture.asset(Assets.imageBag),
-            SvgPicture.asset(Assets.imageBag2),
+            SvgPicture.asset(Assets.assetsImagesBag),
+            SvgPicture.asset(Assets.assetsImagesBag2),
           ],
         ),
       ),

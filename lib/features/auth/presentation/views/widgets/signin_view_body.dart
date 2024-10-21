@@ -102,7 +102,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 onPressed: () {
                   context.read<SigninCubit>().signinWithGoogle();
                 },
-                image: Assets.imagesGoogleIcon,
+                image: Assets.assetsImagesGoogleIcon,
                 title: 'تسجيل بواسطة جوجل',
               ),
               const SizedBox(
@@ -115,7 +115,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                           onPressed: () {
                             context.read<SigninCubit>().signinWithApple();
                           },
-                          image: Assets.imagesApplIcon,
+                          image: Assets.assetsImagesApplIcon,
                           title: 'تسجيل بواسطة أبل',
                         ),
                         const SizedBox(
@@ -128,7 +128,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 onPressed: () {
                   context.read<SigninCubit>().signinWithFacebook();
                 },
-                image: Assets.imagesFacebookIcon,
+                image: Assets.assetsImagesFacebookIcon,
                 title: 'تسجيل بواسطة فيسبوك',
               ),
             ],

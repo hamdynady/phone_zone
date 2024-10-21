@@ -16,8 +16,8 @@ class OnBoardingPageview extends StatelessWidget {
       children: [
         PageviewItem(
           isVisible: true,
-          image: Assets.imagesPageViewItem1Image,
-          backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
+          image: Assets.assetsImagesPageViewItem1Image,
+          backgroundImage: Assets.assetsImagesPageViewItem1BackgroundImage,
           subtitle:
               ' اكتشف تجربة تسوق فريدة مع PhoneZone. استكشف مجموعتنا الواسعة من اكسسورات الهاتف المبتكرة واحصل على أفضل العروض والجودة العالية.',
           title: Row(
@@ -44,8 +44,8 @@ class OnBoardingPageview extends StatelessWidget {
         ),
         const PageviewItem(
           isVisible: false,
-          image: Assets.imagesPageViewItem2Image,
-          backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
+          image: Assets.assetsImagesPageViewItem2Image,
+          backgroundImage: Assets.assetsImagesPageViewItem2BackgroundImage,
           subtitle:
               'نقدم لك أفضل الاكسسوارات المبتكرة . اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الاكسسوارات الممتازة ',
           title: Text(

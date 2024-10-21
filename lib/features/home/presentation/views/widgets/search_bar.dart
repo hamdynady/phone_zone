@@ -19,7 +19,7 @@ class HomeSearchBar extends StatelessWidget {
               hintText: 'بحث عن منتج',
               textInputType: TextInputType.emailAddress,
               suffixIcon: SvgPicture.asset(
-                Assets.imageSearch,
+                Assets.assetsImagesSearch,
                 fit: BoxFit.scaleDown,
               ),
               radius: 28,
@@ -29,7 +29,7 @@ class HomeSearchBar extends StatelessWidget {
         const SizedBox(width: 5),
         IconButton(
           onPressed: () {},
-          icon: SvgPicture.asset(Assets.imageFilter),
+          icon: SvgPicture.asset(Assets.assetsImagesFilter),
         ),
       ],
     );
