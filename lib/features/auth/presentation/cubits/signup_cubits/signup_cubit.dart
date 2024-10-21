@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:phone_zone/features/auth/data/models/user_model.dart';
 import 'package:phone_zone/features/auth/domain/enities/user_entity.dart';
 import 'package:phone_zone/features/auth/domain/repos/auth_repo.dart';
 
@@ -23,5 +24,19 @@ class SignupCubit extends Cubit<SignupState> {
         SignupSuccess(userEntity: userEntity),
       ),
     );
+  }
+
+  Future<UserModel> fetchUserData({required String uId}) async {
+    try {
+      UserEntity userEntity = await authRepo.getUserData(uId: uId);
+      UserModel userModel = UserModel(
+        name: userEntity.name,
+        email: userEntity.email,
+        uId: userEntity.uId,
+      );
+      return userModel;
+    } on Exception {
+      throw (" خطأ في الحصول على البيانات");
+    }
   }
 }

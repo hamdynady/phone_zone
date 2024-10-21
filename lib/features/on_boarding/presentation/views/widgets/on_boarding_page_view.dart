@@ -19,7 +19,7 @@ class OnBoardingPageview extends StatelessWidget {
           image: Assets.imagesPageViewItem1Image,
           backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
           subtitle:
-              'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
+              ' اكتشف تجربة تسوق فريدة مع PhoneZone. استكشف مجموعتنا الواسعة من اكسسورات الهاتف المبتكرة واحصل على أفضل العروض والجودة العالية.',
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -28,13 +28,13 @@ class OnBoardingPageview extends StatelessWidget {
                 style: TextStyles.bold23,
               ),
               Text(
-                '  HUB',
+                '  ZONE',
                 style: TextStyles.bold23.copyWith(
                   color: AppColors.secondaryColor,
                 ),
               ),
               Text(
-                'Fruit',
+                'PHONE',
                 style: TextStyles.bold23.copyWith(
                   color: AppColors.primaryColor,
                 ),
@@ -47,7 +47,7 @@ class OnBoardingPageview extends StatelessWidget {
           image: Assets.imagesPageViewItem2Image,
           backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
           subtitle:
-              'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
+              'نقدم لك أفضل الاكسسوارات المبتكرة . اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الاكسسوارات الممتازة ',
           title: Text(
             'ابحث وتسوق',
             textAlign: TextAlign.center,

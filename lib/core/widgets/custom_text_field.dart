@@ -8,12 +8,14 @@ class CustomTextFormField extends StatelessWidget {
       required this.textInputType,
       this.suffixIcon,
       this.onSaved,
-      this.obscureText = false});
+      this.obscureText = false,
+      this.radius = 4.0});
   final String hintText;
   final TextInputType textInputType;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final bool obscureText;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -26,6 +28,7 @@ class CustomTextFormField extends StatelessWidget {
         return null;
       },
       keyboardType: textInputType,
+      cursorHeight: 20,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintStyle: TextStyles.bold13.copyWith(
@@ -33,17 +36,17 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintText: hintText,
         filled: true,
-        fillColor: const Color(0xFFF9FAFA),
-        border: buildBorder(),
-        enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(),
+        fillColor: const Color(0xffF3F3FB),
+        border: buildBorder(radius),
+        enabledBorder: buildBorder(radius),
+        focusedBorder: buildBorder(radius),
       ),
     );
   }
 
-  OutlineInputBorder buildBorder() {
+  OutlineInputBorder buildBorder(double radius) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(radius),
       borderSide: const BorderSide(
         width: 1,
         color: Color(0xFFE6E9E9),
