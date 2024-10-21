@@ -3,15 +3,19 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:phone_zone/core/errors/exceptions.dart';
 import 'package:phone_zone/core/errors/failures.dart';
+import 'package:phone_zone/core/services/database_service.dart';
 import 'package:phone_zone/core/services/firebase_auth_service.dart';
+import 'package:phone_zone/core/utils/backend_endpoint.dart';
 import 'package:phone_zone/features/auth/data/models/user_model.dart';
 import 'package:phone_zone/features/auth/domain/enities/user_entity.dart';
 import 'package:phone_zone/features/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
+  final DatabaseService databaseService;
 
-  AuthRepoImpl({required this.firebaseAuthService});
+  AuthRepoImpl(
+      {required this.databaseService, required this.firebaseAuthService});
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
       String email, String password, String name) async {
@@ -19,11 +23,8 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthService.createUserWithEmailAndPassword(
           email: email, password: password);
-      var userEntity = UserEntity(
-        name: name,
-        email: email,
-        uId: user.uid,
-      );
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       await deleteUser(user);
@@ -80,7 +81,7 @@ class AuthRepoImpl extends AuthRepo {
 
       return right(userEntity);
     } catch (e) {
-      await deleteUser(user);
+      // await deleteUser(user);
       log(
         'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
       );
@@ -120,5 +121,11 @@ class AuthRepoImpl extends AuthRepo {
         'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
       ));
     }
+  }
+
+  @override
+  Future addUserData({required UserEntity user}) async {
+    await databaseService.addData(
+        path: BackendEndpoint.addUserData, data: user.toMap());
   }
 }
